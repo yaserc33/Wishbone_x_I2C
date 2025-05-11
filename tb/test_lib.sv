@@ -109,3 +109,44 @@ endclass : wb_read_byte_on_i2c
 
 
 
+//----------------------------------------------------------------
+// TEST: : This general purpose test
+//----------------------------------------------------------------
+class wb_i2c_test extends base_test;
+
+  `uvm_component_utils(wb_i2c_test)
+
+  function new(string name = get_type_name(), uvm_component parent = null);
+    super.new(name, parent);
+  endfunction : new
+
+
+
+
+  task run_phase(uvm_phase phase);
+    uvm_objection obj = phase.get_objection();
+    obj.set_drain_time(this, 100ns);
+  endtask : run_phase
+
+
+  virtual function void build_phase(uvm_phase phase);
+
+
+    // Set the default sequence for the clock
+    uvm_config_wrapper::set(this, "*clk_rst*", "default_sequence", clk10_rst5_seq::get_type());
+   
+   
+   //select one of the following test  
+    // uvm_config_wrapper::set(this, "*mc_seqr.run_phase",  "default_sequence", i2c_write_to_wrong_addr_mc_seq::get_type()); 
+    uvm_config_wrapper::set(this, "*mc_seqr.run_phase",  "default_sequence", i2c_write_while_busy_mc_seq::get_type()); 
+    // uvm_config_wrapper::set(this, "*mc_seqr.run_phase",  "default_sequence", i2c_multiple_write_mc_seq::get_type()); 
+    // uvm_config_wrapper::set(this, "*mc_seqr.run_phase",  "default_sequence", i2c_multiple_read_mc_seq::get_type()); 
+   
+
+
+
+
+    super.build_phase(phase);
+  endfunction : build_phase
+
+endclass : wb_i2c_test

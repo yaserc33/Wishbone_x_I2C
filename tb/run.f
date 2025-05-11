@@ -13,8 +13,9 @@
 
 ############select test###########
 
-// +UVM_TESTNAME=wb_write_byte_on_i2c
-+UVM_TESTNAME=wb_read_byte_on_i2c
++UVM_TESTNAME=wb_write_byte_on_i2c
+// +UVM_TESTNAME=wb_read_byte_on_i2c
+// +UVM_TESTNAME=wb_i2c_test
 
 
 

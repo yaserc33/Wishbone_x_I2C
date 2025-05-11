@@ -11,6 +11,8 @@ class mc_seq extends uvm_sequence;
   i2c_write_byte_seq i2c_write_byte;
   i2c_read_byte_seq i2c_read_byte;
   i2c_slave_seq i2c_slave;
+  i2c_write_to_wrong_addr_seq i2c_write_to_wrong_addr;
+  i2c_write_while_busy_seq i2c_write_while_busy;
 
     function new(string name ="mc_seq");
         super.new(name);
@@ -110,3 +112,131 @@ endtask:body
 endclass: i2c_read_mc_seq
 
 
+
+
+class i2c_write_to_wrong_addr_mc_seq extends mc_seq;
+    
+    `uvm_object_utils(i2c_write_to_wrong_addr_mc_seq)
+ 
+
+    function new(string name ="i2c_write_to_wrong_addr_mc_seq");
+        super.new(name);
+    endfunction:new
+
+
+// do the SEQs in the targeted seqr
+ task body();
+
+//enable i2c core and set the core on fast mode (400Kbps)
+`uvm_do_on(i2c_400k, p_sequencer.wb_seqr)
+
+//write to slave 
+fork
+`uvm_do_on(i2c_slave, p_sequencer.i2c_seqr)
+`uvm_do_on(i2c_write_to_wrong_addr, p_sequencer.wb_seqr)
+join
+
+
+endtask:body
+
+
+endclass: i2c_write_to_wrong_addr_mc_seq
+
+
+
+
+class i2c_write_while_busy_mc_seq extends mc_seq;
+    
+    `uvm_object_utils(i2c_write_while_busy_mc_seq)
+ 
+
+    function new(string name ="i2c_write_while_busy_mc_seq");
+        super.new(name);
+    endfunction:new
+
+
+// do the SEQs in the targeted seqr
+ task body();
+
+//enable i2c core and set the core on fast mode (400Kbps)
+`uvm_do_on(i2c_400k, p_sequencer.wb_seqr)
+
+//write to slave 
+fork
+`uvm_do_on(i2c_slave, p_sequencer.i2c_seqr)
+`uvm_do_on(i2c_write_while_busy, p_sequencer.wb_seqr)
+join
+
+
+endtask:body
+
+
+endclass: i2c_write_while_busy_mc_seq
+
+
+class i2c_multiple_write_mc_seq extends mc_seq;
+    
+    `uvm_object_utils(i2c_multiple_write_mc_seq)
+ 
+
+    function new(string name ="i2c_multiple_write_mc_seq");
+        super.new(name);
+    endfunction:new
+
+
+// do the SEQs in the targeted seqr
+ task body();
+
+//enable i2c core and set the core on fast mode (400Kbps)
+`uvm_do_on(i2c_400k, p_sequencer.wb_seqr)
+
+//write to slave 
+fork
+`uvm_do_on(i2c_slave, p_sequencer.i2c_seqr)
+`uvm_do_on(i2c_write_byte, p_sequencer.wb_seqr)
+join_any
+`uvm_do_on(i2c_write_byte, p_sequencer.wb_seqr)
+`uvm_do_on(i2c_write_byte, p_sequencer.wb_seqr)
+
+
+
+
+endtask:body
+
+
+endclass: i2c_multiple_write_mc_seq
+
+
+
+
+class i2c_multiple_read_mc_seq extends mc_seq;
+    
+    `uvm_object_utils(i2c_multiple_read_mc_seq)
+ 
+
+    function new(string name ="i2c_multiple_read_mc_seq");
+        super.new(name);
+    endfunction:new
+
+
+// do the SEQs in the targeted seqr
+ task body();
+
+//enable i2c core and set the core on fast mode (400Kbps)
+`uvm_do_on(i2c_400k, p_sequencer.wb_seqr)
+
+//write to slave 
+fork
+`uvm_do_on(i2c_slave, p_sequencer.i2c_seqr)
+`uvm_do_on(i2c_read_byte, p_sequencer.wb_seqr)
+join_any
+`uvm_do_on(i2c_read_byte, p_sequencer.wb_seqr)
+`uvm_do_on(i2c_read_byte, p_sequencer.wb_seqr)
+
+
+
+
+endtask:body
+
+
+endclass: i2c_multiple_read_mc_seq
