@@ -1,0 +1,233 @@
+Command: /home/Yasir_Alqulayti/DV/Wishbone_x_I2C/tb/./simv -l sim.log +UVM_TESTNAME=wb_read_byte_on_i2c +UVM_VERBOSITY=UVM_HIGH -timescale 1ns/1ns
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  May 11 17:30 2025
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test wb_read_byte_on_i2c...
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+---------------------------------------------------------------------------------
+Name                          Type                               Size  Value     
+---------------------------------------------------------------------------------
+uvm_test_top                  wb_read_byte_on_i2c                -     @469      
+  tb                          testbench                          -     @486      
+    clk_rst                   clock_and_reset_env                -     @507      
+      agent                   clock_and_reset_agent              -     @637      
+        driver                clock_and_reset_driver             -     @648      
+          rsp_port            uvm_analysis_port                  -     @663      
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          seq_item_port       uvm_seq_item_pull_port             -     @655      
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+        sequencer             clock_and_reset_sequencer          -     @671      
+          rsp_export          uvm_analysis_export                -     @678      
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          seq_item_export     uvm_seq_item_pull_imp              -     @772      
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+          arbitration_queue   array                              0     -         
+          lock_queue          array                              0     -         
+          num_last_reqs       integral                           32    'd1       
+          num_last_rsps       integral                           32    'd1       
+        recording_detail      uvm_verbosity                      32    UVM_FULL  
+      recording_detail        uvm_verbosity                      32    UVM_FULL  
+    i2c                       i2c_env                            -     @514      
+      slaves[0]               i2c_slave_agent                    -     @788      
+        driver                i2c_slave_driver                   -     @927      
+          rsp_port            uvm_analysis_port                  -     @942      
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          seq_item_port       uvm_seq_item_pull_port             -     @934      
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          slave_id            integral                           32    'h0       
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+        monitor               i2c_slave_monitor                  -     @803      
+          i2c_analysis_port   uvm_analysis_port                  -     @810      
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          slave_id            integral                           32    'h0       
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+        sequencer             i2c_slave_sequencer                -     @818      
+          rsp_export          uvm_analysis_export                -     @825      
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          seq_item_export     uvm_seq_item_pull_imp              -     @919      
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          slave_id            integral                           32    'h0       
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+          arbitration_queue   array                              0     -         
+          lock_queue          array                              0     -         
+          num_last_reqs       integral                           32    'd1       
+          num_last_rsps       integral                           32    'd1       
+        is_active             uvm_active_passive_enum            1     UVM_ACTIVE
+        slave_id              integral                           32    'h0       
+        recording_detail      uvm_verbosity                      32    UVM_FULL  
+      num_masters             integral                           32    'h0       
+      num_slaves              integral                           32    'h1       
+      recording_detail        uvm_verbosity                      32    UVM_FULL  
+    mc_seqr                   mc_sequencer                       -     @521      
+      rsp_export              uvm_analysis_export                -     @528      
+        recording_detail      uvm_verbosity                      32    UVM_FULL  
+      seq_item_export         uvm_seq_item_pull_imp              -     @622      
+        recording_detail      uvm_verbosity                      32    UVM_FULL  
+      recording_detail        uvm_verbosity                      32    UVM_FULL  
+      arbitration_queue       array                              0     -         
+      lock_queue              array                              0     -         
+      num_last_reqs           integral                           32    'd1       
+      num_last_rsps           integral                           32    'd1       
+    sb_module                 i2c_module                         -     @630      
+      i2c_ref_model           wb_x_i2c_ref_model                 -     @989      
+        sbd_port              uvm_analysis_port                  -     @1004     
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+        wb_imp                uvm_analysis_imp_wb                -     @996      
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+        recording_detail      uvm_verbosity                      32    UVM_FULL  
+      i2c_sbd                 i2c_scoreboard                     -     @966      
+        i2c_imp               uvm_analysis_imp_i2c               -     @981      
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+        ref_model_imp         uvm_analysis_imp_wb_i2c_ref_model  -     @973      
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+        recording_detail      uvm_verbosity                      32    UVM_FULL  
+      recording_detail        uvm_verbosity                      32    UVM_FULL  
+    wb                        wb_env                             -     @500      
+      masters[0]              wb_master_agent                    -     @1015     
+        driver                wb_master_driver                   -     @1154     
+          rsp_port            uvm_analysis_port                  -     @1169     
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          seq_item_port       uvm_seq_item_pull_port             -     @1161     
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          master_id           integral                           32    'h0       
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+        monitor               wb_master_monitor                  -     @1030     
+          wb_port             uvm_analysis_port                  -     @1037     
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          master_id           integral                           32    'h0       
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+        sequencer             wb_master_sequencer                -     @1045     
+          rsp_export          uvm_analysis_export                -     @1052     
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          seq_item_export     uvm_seq_item_pull_imp              -     @1146     
+            recording_detail  uvm_verbosity                      32    UVM_FULL  
+          master_id           integral                           32    'h0       
+          recording_detail    uvm_verbosity                      32    UVM_FULL  
+          arbitration_queue   array                              0     -         
+          lock_queue          array                              0     -         
+          num_last_reqs       integral                           32    'd1       
+          num_last_rsps       integral                           32    'd1       
+        is_active             uvm_active_passive_enum            1     UVM_ACTIVE
+        master_id             integral                           32    'h0       
+        recording_detail      uvm_verbosity                      32    UVM_FULL  
+      num_masters             integral                           32    'h1       
+      num_slaves              integral                           32    'h0       
+      recording_detail        uvm_verbosity                      32    UVM_FULL  
+    recording_detail          uvm_verbosity                      32    UVM_FULL  
+---------------------------------------------------------------------------------
+
+UVM_INFO mc_seq_lib.sv(29) @ 0: uvm_test_top.tb.mc_seqr@@i2c_read_mc_seq [i2c_read_mc_seq] raise objection
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../wb/sv/../sv/wb_master_seqs.sv(70) @ 0: uvm_test_top.tb.wb.masters[0].sequencer@@i2c_read_mc_seq.i2c_400k [i2c_400k_seq] Executing sequence
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(48) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq [clk10_rst5_seq] Starting test_sequence sequence body
+UVM_INFO ../clock_and_reset/sv/clock_and_reset_seq.sv(20) @ 0: uvm_test_top.tb.clk_rst.agent.sequencer@@clk10_rst5_seq.cr [clock_and_reset_sequence] starting body clock_and_reset_wait_seq
+UVM_INFO ../i2c/sv/../sv/i2c_slave_seqs.sv(63) @ 126: uvm_test_top.tb.i2c.slaves[0].sequencer@@i2c_read_mc_seq.i2c_slave [i2c_slave_seq] Executing sequence
+UVM_INFO ../wb/sv/../sv/wb_master_seqs.sv(245) @ 126: uvm_test_top.tb.wb.masters[0].sequencer@@i2c_read_mc_seq.i2c_read_byte [i2c_read_byte_seq] Executing sequence
+UVM_INFO ../i2c/sv/i2c_if.sv(42) @ 27666: reporter [i2c_slave_driver] sending the byte:[6c] to i2c master
+UVM_INFO ../i2c/sv/../sv/i2c_slave_monitor.sv(44) @ 51006: uvm_test_top.tb.i2c.slaves[0].monitor [i2c_slave_monitor] transaction collected :
+---------------------------------------------------------
+Name        Type              Size  Value                
+---------------------------------------------------------
+tr_collect  i2c_transaction   -     @1195                
+  op_type   i2c_op_type_enum  1     i2c_slave_write_to_wb
+  addr      integral          8     'hab                 
+  din       integral          8     'h0                  
+  dout      integral          8     'h6c                 
+---------------------------------------------------------
+
+UVM_INFO mc_seq_lib.sv(43) @ 55186: uvm_test_top.tb.mc_seqr@@i2c_read_mc_seq [i2c_read_mc_seq] drop objection
+UVM_INFO /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/base/uvm_objection.svh(1274) @ 55286: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../wb_x_i2c_module/sv/i2c_scoreboard.sv(115) @ 55286: uvm_test_top.tb.sb_module.i2c_sbd [i2c_scoreboard] printing report
+
+****************** TEST REPORT ******************
+
+Packets Summary:
+
+   - Total WB Packets Received:            2
+   - Total SPI Packets Received:           0
+   - Total I2C Packets Received:           2
+   - Total UART Packets Received:          0
+   - Total Packets Received:           4
+   - Total Matched Packets:            1
+   - Number of Mismatches:             0
+
+
+==================================================
+                    TEST PASS ✅
+==================================================
+
+
+****************** END OF REPORT ******************
+
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   37
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVMTOP]     1
+[clk10_rst5_seq]    13
+[clock_and_reset_sequence]    13
+[i2c_400k_seq]     1
+[i2c_read_byte_seq]     1
+[i2c_read_mc_seq]     2
+[i2c_scoreboard]     1
+[i2c_slave_driver]     1
+[i2c_slave_monitor]     1
+[i2c_slave_seq]     1
+$finish called from file "/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time                55286
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 55286 ns
+CPU Time:      0.730 seconds;       Data structure size:   0.5Mb
+Sun May 11 17:30:44 2025

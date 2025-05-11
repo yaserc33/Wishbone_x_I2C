@@ -1,0 +1,89 @@
+Command: /home/Yasir_Alqulayti/DV/soc/i2c/tb/./simv -l sim.log +UVM_TESTNAME=i2c_write_read_test +UVM_VERBOSITY=UVM_HIGH -timescale 1ns/1ns
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr 30 21:18 2025
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test i2c_write_read_test...
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+------------------------------------------------------------------------
+Name                           Type                     Size  Value     
+------------------------------------------------------------------------
+uvm_test_top                   i2c_write_read_test      -     @461      
+  tb                           demo_tb                  -     @477      
+    i2c                        i2c_env                  -     @489      
+      slaves[0]                i2c_slave_agent          -     @499      
+        driver                 i2c_slave_driver         -     @638      
+          rsp_port             uvm_analysis_port        -     @653      
+            recording_detail   uvm_verbosity            32    UVM_FULL  
+          seq_item_port        uvm_seq_item_pull_port   -     @645      
+            recording_detail   uvm_verbosity            32    UVM_FULL  
+          slave_id             integral                 32    'h0       
+          recording_detail     uvm_verbosity            32    UVM_FULL  
+        monitor                i2c_slave_monitor        -     @514      
+          item_collected_port  uvm_analysis_port        -     @521      
+            recording_detail   uvm_verbosity            32    UVM_FULL  
+          slave_id             integral                 32    'h0       
+          recording_detail     uvm_verbosity            32    UVM_FULL  
+        sequencer              i2c_slave_sequencer      -     @529      
+          rsp_export           uvm_analysis_export      -     @536      
+            recording_detail   uvm_verbosity            32    UVM_FULL  
+          seq_item_export      uvm_seq_item_pull_imp    -     @630      
+            recording_detail   uvm_verbosity            32    UVM_FULL  
+          slave_id             integral                 32    'h0       
+          recording_detail     uvm_verbosity            32    UVM_FULL  
+          arbitration_queue    array                    0     -         
+          lock_queue           array                    0     -         
+          num_last_reqs        integral                 32    'd1       
+          num_last_rsps        integral                 32    'd1       
+        is_active              uvm_active_passive_enum  1     UVM_ACTIVE
+        slave_id               integral                 32    'h0       
+        recording_detail       uvm_verbosity            32    UVM_FULL  
+      num_masters              integral                 32    'h0       
+      num_slaves               integral                 32    'h1       
+      recording_detail         uvm_verbosity            32    UVM_FULL  
+    recording_detail           uvm_verbosity            32    UVM_FULL  
+------------------------------------------------------------------------
+
+UVM_INFO @ 0: uvm_test_top [CFGNRD]  ::: The following resources have at least one write and no reads :::
+default_sequence [/^uvm_test_top\.tb\.i2c\.masters\[0\]\.sequencer\.main_phase$/] : (class uvm_pkg::uvm_object_wrapper) ?
+-  
+  --------
+  uvm_test_top reads: 0 @ 0  writes: 1 @ 0
+ 
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    3
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[CFGNRD]     1
+[RNTST]     1
+[UVMTOP]     1
+$finish called from file "/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time                    0
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0 ns
+CPU Time:      0.210 seconds;       Data structure size:   0.4Mb
+Wed Apr 30 21:18:33 2025
