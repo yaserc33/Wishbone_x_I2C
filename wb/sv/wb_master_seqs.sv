@@ -91,7 +91,7 @@ class i2c_400k_seq extends wb_base_seq;
     `uvm_do_with(req,
                  { op_type == wb_write ; 
                    addr == 32'h42; //i2c control register (ctr)
-                   din == 8'b1000_0000;  //7:en i2c   6: en inte
+                   din == 8'b1000_0000;  //7:en i2c   6: en inta
                    valid_sb == 0;  ///indicate to scoreboard that this is configuration command
                  })
 
@@ -177,8 +177,7 @@ class i2c_write_byte_seq extends wb_base_seq;
        `uvm_do_with(req,
                  { op_type == wb_write ; 
                    addr == 32'h43; //i2c transmit register
-                   din == 8'b1101_1101; // dumy data :DD
-                   valid_sb == 0;  //indicate that it's a read sequence
+                   valid_sb == 1;  //indicate that it's a read sequence
                  })
       `uvm_do_with(req,
                  { op_type == wb_write ; 
@@ -191,9 +190,9 @@ class i2c_write_byte_seq extends wb_base_seq;
 
 
 
-//////////////////
+////////////////
 //polling for STOP
-/////////////////
+///////////////
    // this  additional polling transaction is "necessary" to bypass the initial dout value of 8'b0000_0000
      `uvm_do_with(req,
                  { op_type == wb_read ; 
@@ -345,6 +344,169 @@ class i2c_read_byte_seq extends wb_base_seq;
 
 
 endclass : i2c_read_byte_seq
+
+
+
+//------------------------------------------------------------------------------
+// SEQUENCE: i2c_write_to_wrong_addr_seq  this sequence write a single byte to addr that is not in the bus (No ACK)
+//------------------------------------------------------------------------------
+
+class i2c_write_to_wrong_addr_seq extends wb_base_seq;
+  `uvm_object_utils(i2c_write_to_wrong_addr_seq)
+
+  function new(string name = get_type_name());
+    super.new(name);
+  endfunction
+
+
+  bit [6:0] slave_addr =7'b1111111 ;
+  int count_polling = 0;
+
+  virtual task body();
+    `uvm_info(get_type_name(), "Executing sequence", UVM_LOW)
+
+
+ // sendign heaeder byte 
+     `uvm_do_with(req,
+                 { op_type == wb_write ; 
+                   addr == 32'h43; //i2c transmit register
+                   din == {slave_addr,1'b0}; // 7-1: slave addr [1010101], 0: write
+                   valid_sb == 0;  //indicate to scoreboard that this is configuration command
+                 })
+      `uvm_do_with(req,
+                 { op_type == wb_write ; 
+                   addr == 32'h44; //i2c command register
+                   din == 8'b1001_0000; //sta & wr
+                   valid_sb == 0;  //indicate to scoreboard that this is configuration command
+                 })
+
+
+/////////////
+//polling for ACK && TIP 
+////////////              
+  
+  // this  additional polling transaction is "necessary" to bypass the initial dout value of 8'b0000_0000
+     `uvm_do_with(req,
+                 { op_type == wb_read ; 
+                   addr == 32'h44; //i2c status register
+                   valid_sb == 0;  //indicate to scoreboard that this is configuration command
+                 })
+  count_polling =0;
+
+  while(1) begin :polling
+    count_polling++;
+      `uvm_do_with(req,
+                 { op_type == wb_read ; 
+                   addr == 32'h44; //i2c status register
+                   valid_sb == 0;  //indicate to scoreboard that this is configuration command
+                 })
+
+  if (!req.dout[7] && !req.dout[1]) begin // check for ACK && TIP both bits should be de-asserted
+   break; // i2c finish transmiting 
+  end
+  else if (count_polling > 5_000) begin
+    `uvm_error (get_type_name(), "WB took too long to poll I2C");
+    break;
+  end
+
+  end 
+
+  endtask : body
+endclass : i2c_write_to_wrong_addr_seq
+
+
+
+
+
+//------------------------------------------------------------------------------
+// SEQUENCE: i2c_write_while_busy_seq  this sequence write a single byte while bus is busy 
+//------------------------------------------------------------------------------
+
+class i2c_write_while_busy_seq extends wb_base_seq;
+  `uvm_object_utils(i2c_write_while_busy_seq)
+
+  function new(string name = get_type_name());
+    super.new(name);
+  endfunction
+
+
+  bit [6:0] slave_addr =7'b1010110 ;
+  int count_polling = 0;
+
+  virtual task body();
+    `uvm_info(get_type_name(), "Executing sequence", UVM_LOW)
+
+
+ // sendign heaeder byte 
+     `uvm_do_with(req,
+                 { op_type == wb_write ; 
+                   addr == 32'h43; //i2c transmit register
+                   din == {slave_addr,1'b0}; // 7-1: slave addr [1010101], 0: write
+                   valid_sb == 0;  //indicate to scoreboard that this is configuration command
+                 })
+      `uvm_do_with(req,
+                 { op_type == wb_write ; 
+                   addr == 32'h44; //i2c command register
+                   din == 8'b1001_0000; //sta & wr
+                   valid_sb == 0;  //indicate to scoreboard that this is configuration command
+                 })
+
+
+
+      #10_000;
+       // sendign heaeder byte 
+     `uvm_do_with(req,
+                 { op_type == wb_write ; 
+                   addr == 32'h43; //i2c transmit register
+                   din == 8'hff; //  writing 0xff  
+                   valid_sb == 0;  //indicate to scoreboard that this is configuration command
+                 })
+      `uvm_do_with(req,
+                 { op_type == wb_write ; 
+                   addr == 32'h44; //i2c command register
+                   din == 8'b1001_0000; //sta & wr
+                   valid_sb == 0;  //indicate to scoreboard that this is configuration command
+                 })
+      #50_000;
+
+
+
+  endtask : body
+
+
+
+endclass : i2c_write_while_busy_seq
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

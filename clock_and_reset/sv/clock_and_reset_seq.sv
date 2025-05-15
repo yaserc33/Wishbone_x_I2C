@@ -17,7 +17,7 @@ class clock_and_reset_sequence extends uvm_sequence #(clock_and_reset_sequence_i
 
   task body();
   
-    `uvm_info(get_type_name(), "starting body clock_and_reset_wait_seq", UVM_LOW)
+    `uvm_info(get_type_name(), "starting body clock_and_reset_wait_seq", UVM_HIGH)
   
     // send a single sequence item in so the interrupt sequence knows who to return responses to
     req = clock_and_reset_sequence_item::type_id::create("req");

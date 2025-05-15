@@ -44,7 +44,7 @@ virtual task run_phase(uvm_phase phase);
 
     collect();
 
-    `uvm_info(get_type_name(), $sformatf("transaction collected :\n%s",tr_collect.sprint()), UVM_FULL)
+    `uvm_info(get_type_name(), $sformatf("transaction collected :\n%s",tr_collect.sprint()), UVM_HIGH)
     wb_port.write(tr_collect);
      end
   endtask : run_phase

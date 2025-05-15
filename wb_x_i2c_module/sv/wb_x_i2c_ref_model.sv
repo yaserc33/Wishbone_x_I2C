@@ -60,6 +60,7 @@ class wb_x_i2c_ref_model extends uvm_scoreboard;
 					if (tr.op_type == wb_write) 
 						begin
 							TXR.push_back(tr.din);
+							if (tr.valid_sb)
 							sbd_port.write(tr); 
 						end
 					else

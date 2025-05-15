@@ -60,7 +60,7 @@ class i2c_slave_seq extends i2c_slave_base_seq;
   `uvm_object_utils(i2c_slave_seq)
 
   virtual task body();
-    `uvm_info(get_type_name(), "Executing sequence", UVM_LOW)
+    `uvm_info(get_type_name(), "slave are running now and ready to response", UVM_LOW)
     `uvm_do(req)
   endtask : body
 

@@ -26,13 +26,13 @@ addr <= tr.addr;
 we <= 1;
 din <= tr.din;
 wait(ack);
+valid_sb <=tr.valid_sb;
 wait(!ack);
 cyc <= 0;
 stb <= 0;
 addr <= 0;
 we <= 0;
 din <= 0;
-valid_sb <=tr.valid_sb;
 end else if (tr.op_type == wb_read)begin
 
 @(negedge clk);

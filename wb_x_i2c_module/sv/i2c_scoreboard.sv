@@ -53,8 +53,8 @@ class i2c_scoreboard extends uvm_scoreboard;
         i2c_queue.push_back(clone_tr);
         `uvm_info("i2c_SCOREBOARD", $sformatf("Received i2c Transaction: %s", tr.sprint()), UVM_FULL)
                   
-        total_i2c_transactions+=2;//because 2 byte in one transaction and we count byte wise 
-        total_packets_received+=2;
+        total_i2c_transactions++;//because 2 byte in one transaction and we count byte wise 
+        total_packets_received++;
         
         compare_transactions();
     endfunction
@@ -79,7 +79,7 @@ class i2c_scoreboard extends uvm_scoreboard;
             wb_transaction wb_pkt = wb_queue.pop_front();
            
             if (wb_pkt.op_type==wb_write)begin 
-                if (i2c_pkt.din == wb_pkt.dout) 
+                if (i2c_pkt.din == wb_pkt.din) 
                     total_matched_packets++;
                 else begin
                     `uvm_error("Mismatch", $sformatf("Mismatch: i2c = %h, WB = %h", i2c_pkt.din, wb_pkt.dout))
