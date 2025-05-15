@@ -137,7 +137,7 @@ class wb_i2c_test extends base_test;
    
    
    //select one of the following test  
-    // uvm_config_wrapper::set(this, "*mc_seqr.run_phase",  "default_sequence", i2c_write_to_wrong_addr_mc_seq::get_type()); 
+    //  uvm_config_wrapper::set(this, "*mc_seqr.run_phase",  "default_sequence", i2c_write_to_wrong_addr_mc_seq::get_type()); 
     uvm_config_wrapper::set(this, "*mc_seqr.run_phase",  "default_sequence", i2c_write_while_busy_mc_seq::get_type()); 
     // uvm_config_wrapper::set(this, "*mc_seqr.run_phase",  "default_sequence", i2c_multiple_write_mc_seq::get_type()); 
     // uvm_config_wrapper::set(this, "*mc_seqr.run_phase",  "default_sequence", i2c_multiple_read_mc_seq::get_type()); 

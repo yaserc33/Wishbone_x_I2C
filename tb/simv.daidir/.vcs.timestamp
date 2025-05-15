@@ -469,21 +469,22 @@ clkgen.sv
 hw_top.sv
 top.sv
 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcsdstub.tab
-135
+138
 which_declare=declare -f
-_P9K_TTY=/dev/pts/89
-_P9K_SSH_TTY=/dev/pts/89
-XDG_SESSION_ID=1374
+_P9K_TTY=/dev/pts/145
+_P9K_SSH_TTY=/dev/pts/145
+XDG_SESSION_ID=1690
 XDG_RUNTIME_DIR=/run/user/1050
 XDG_DATA_DIRS=/home/Yasir_Alqulayti/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 XA_HOME=/mnt/NVME2/synopsys/xa/W-2024.09-SP1
 VUI_HOME=/mnt/NVME2/synopsys/vui/W-2024.09-SP2
 VTRAN_HOME=/mnt/NVME2/synopsys/vtran/W-2024.09-SP2
-VSCODE_IPC_HOOK_CLI=/run/user/1050/vscode-ipc-3d13d570-105d-4d72-9b8a-67272935d7c4.sock
+VSCODE_IPC_HOOK_CLI=/run/user/1050/vscode-ipc-ac8ff453-2ae3-400b-b5f9-87cf9e4c501e.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/1050/vscode-git-fe732d13a3.sock
-VSCODE_GIT_ASKPASS_NODE=/home/Yasir_Alqulayti/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/node
-VSCODE_GIT_ASKPASS_MAIN=/home/Yasir_Alqulayti/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass-main.js
+VSCODE_GIT_ASKPASS_NODE=/home/Yasir_Alqulayti/.vscode-server/cli/servers/Stable-19e0f9e681ecb8e5c09d8784acaa601316ca4571/server/node
+VSCODE_GIT_ASKPASS_MAIN=/home/Yasir_Alqulayti/.vscode-server/cli/servers/Stable-19e0f9e681ecb8e5c09d8784acaa601316ca4571/server/extensions/git/dist/askpass-main.js
 VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+VSCODE_DEBUGPY_ADAPTER_ENDPOINTS=/home/Yasir_Alqulayti/.vscode-server/extensions/ms-python.debugpy-2025.8.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-5880715d5dff3b28.txt
 VMR_MODE_FLAG=64
 VGEN_HOME=/mnt/NVME2/synopsys/vgen/W-2024.09-SP2
 VERDI_HOME=/mnt/NVME2/synopsys/verdi/W-2024.09
@@ -509,7 +510,7 @@ TWEAKER_HOME=/mnt/NVME2/synopsys/tweaker
 TREE_COLORS=fi=00:mi=00:mh=00:ln=01;36:or=01;31:di=01;34:ow=01;34:st=34:tw=34:pi=01;33:so=01;33:do=01;33:bd=01;33:cd=01;33:su=01;35:sg=01;35:ca=01;35:ex=01;32
 TOOL_HOME=/mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux64
 TESTMAX_HOME=/mnt/NVME2/synopsys/testmax
-TERM_PROGRAM_VERSION=1.99.3
+TERM_PROGRAM_VERSION=1.100.0
 TERM_PROGRAM=vscode
 TERMINFO=/home/Yasir_Alqulayti/.terminfo
 TCM_HOME=/mnt/NVME2/synopsys/tcm
@@ -517,8 +518,8 @@ SYN_HOME=/mnt/NVME2/synopsys/syn
 STARRC_HOME=/mnt/NVME2/synopsys/starrc
 SSL_CERT_FILE=/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
 SSL_CERT_DIR=/etc/pki/tls/certs
-SSH_CONNECTION=192.168.1.11 57471 192.168.1.8 22
-SSH_CLIENT=192.168.1.11 57471 22
+SSH_CONNECTION=192.168.1.11 53675 192.168.1.8 22
+SSH_CLIENT=192.168.1.11 53675 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SPYGLASS_HOME=/mnt/NVME2/synopsys/spyglass/W-2024.09-SP1/SPYGLASS_HOME
 SPIKE_PATH=/usr/bin
@@ -543,6 +544,7 @@ RISCV_GCC=/mnt/SATA2/riscv32gcc/bin/riscv32-unknown-elf-gcc
 RISCV_DV_ROOT=/home/Yasir_Alqulayti/Documents/verif/riscv-dv
 RHSC_ELECTROTHERMAL_ANALYSIS_FUSION_HOME=/mnt/NVME2/synopsys/rhsc_electrothermal_analysis_fusion
 RHSC_ANALYSIS_FUSION_HOME=/mnt/NVME2/synopsys/rhsc_analysis_fusion
+PYDEVD_DISABLE_FILE_VALIDATION=1
 PRIME_HOME=/mnt/NVME2/synopsys/prime
 PRIMEWAVE_HOME=/mnt/NVME2/synopsys/primewave
 PRIMEWAVERELIABILITY_HOME=/mnt/NVME2/synopsys/primewavereliability
@@ -580,8 +582,8 @@ ICC2_HOME=/mnt/NVME2/synopsys/icc2/W-2024.09-SP2/
 HSPICE_HOME=/mnt/NVME2/synopsys/hspice
 HSIM_HOME=/mnt/NVME2/synopsys/hsim
 HISTCONTROL=ignoredups
-GPG_TTY=/dev/pts/89
-GIT_ASKPASS=/home/Yasir_Alqulayti/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/extensions/git/dist/askpass.sh
+GPG_TTY=/dev/pts/145
+GIT_ASKPASS=/home/Yasir_Alqulayti/.vscode-server/cli/servers/Stable-19e0f9e681ecb8e5c09d8784acaa601316ca4571/server/extensions/git/dist/askpass.sh
 FUSIONCOMPILER_HOME=/mnt/NVME2/synopsys/fusioncompiler
 FPGA_HOME=/mnt/NVME2/synopsys/fpga
 FM_HOME=/mnt/NVME2/synopsys/fm
@@ -598,6 +600,7 @@ CMLP_HOME=/mnt/NVME2/synopsys/cmlp
 CF_HOME=/mnt/NVME2/synopsys/cf
 CERTITUDE_HOME=/mnt/NVME2/synopsys/certitude
 CCK_HOME=/mnt/NVME2/synopsys/cck
+BUNDLED_DEBUGPY_PATH=/home/Yasir_Alqulayti/.vscode-server/extensions/ms-python.debugpy-2025.8.0-linux-x64/bundled/libs/debugpy
 BASH_FUNC_which%%=() {  ( alias;_ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@_}
 BASH_FUNC_switchml%%=() {  typeset swfound=1;_ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then_ typeset swname='main';_ if [ -e /usr/share/Modules/libexec/modulecmd.tcl ]; then_ typeset swfound=0;_ unset MODULES_USE_COMPAT_VERSION;_ fi;_ else_ typeset swname='compatibility';_ if [ -e /usr/share/Modules/libexec/modulecmd-compat ]; then_ typeset swfound=0;_ MODULES_USE_COMPAT_VERSION=1;_ export MODULES_USE_COMPAT_VERSION;_ fi;_ fi;_ if [ $swfound -eq 0 ]; then_ echo "Switching to Modules $swname version";_ source /usr/share/Modules/init/bash;_ else_ echo "Cannot switch to Modules $swname version, command not found";_ return 1;_ fi_}
 BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then_ eval "module $@";_ else_ /usr/bin/scl "$@";_ fi_}
@@ -608,8 +611,8 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 0
 0
 191
-1746983386 test_lib.sv
-1746972729 testbench.sv
+1747306931 test_lib.sv
+1747058035 testbench.sv
 1746983289 mc_seq_lib.sv
 1746949953 mc_sequencer.sv
 1746892550 ../rtl/i2c/i2c_master_defines.v
@@ -642,7 +645,7 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 1746892528 ../wb/sv/../sv/wb_slave_monitor.sv
 1746892528 ../wb/sv/../sv/wb_slave_driver.sv
 1746892528 ../wb/sv/../sv/wb_slave_sequencer.sv
-1746986300 ../wb/sv/../sv/wb_master_seqs.sv
+1747308262 ../wb/sv/../sv/wb_master_seqs.sv
 1746892528 ../wb/sv/../sv/wb_master_agent.sv
 1746982212 ../wb/sv/../sv/wb_master_monitor.sv
 1746892528 ../wb/sv/../sv/wb_master_driver.sv
@@ -784,7 +787,7 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 1733289097 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/macros/uvm_version_defines.svh
 1733289098 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/etc/uvm/uvm_macros.svh
 1746958051 top.sv
-1746951888 hw_top.sv
+1747308223 hw_top.sv
 1746892550 clkgen.sv
 1746949931 ../rtl/i2c/i2c_master_top.v
 1746949917 ../rtl/i2c/i2c_master_byte_ctrl.v
@@ -806,5 +809,5 @@ ALE_HOME=/mnt/NVME2/synopsys/ale
 1733286010 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux64/lib/liberrorinf.so
 1733286000 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux64/lib/libsnpsmalloc.so
 1733285992 /mnt/NVME2/synopsys/vcs/W-2024.09-SP1/linux64/lib/libvfs.so
-1746986871 simv.daidir
+1747308271 simv.daidir
 -1 partitionlib

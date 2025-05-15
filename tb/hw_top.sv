@@ -45,8 +45,7 @@ i2c_if iif (
     // ============================================
     //                      i2c
     // ============================================ 
-
-logic scl_padoen_oe;
+ logic scl_padoen_oe;
 logic sda_padoen_oe;
 logic scl_pad_o;
 logic sda_pad_o;
