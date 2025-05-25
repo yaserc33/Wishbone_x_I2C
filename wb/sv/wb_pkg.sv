@@ -12,7 +12,7 @@ package wb_pkg;
   `include "../sv/wb_master_driver.sv"
   `include "../sv/wb_master_monitor.sv"
   `include "../sv/wb_master_agent.sv"
-  `include "../sv/wb_master_seqs.sv"
+  //`include "../sv/wb_master_seqs.sv"
 
   `include "../sv/wb_slave_sequencer.sv"
   `include "../sv/wb_slave_driver.sv"

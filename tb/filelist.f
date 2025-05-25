@@ -4,6 +4,9 @@
 #      inclouding the UVCs
 ///////////////////////////////////////
 
++incdir+../tests+../sequences
++incdir+../sv
+
 +incdir+../wb/sv            
 ../wb/sv/wb_pkg.sv          
 ../wb/sv/wb_if.sv           

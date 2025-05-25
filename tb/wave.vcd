@@ -1,5 +1,5 @@
 $date
-	Thu May 15 14:28:23 2025
+	Sun May 25 12:25:39 2025
 $end
 
 $version
@@ -10,7 +10,7 @@ $timescale
 	1ns
 $end
 
-$comment Csum: 1 7469565c72c58dd1 $end
+$comment Csum: 1 8de2218a59cbd97c $end
 
 
 $scope module uvm_pkg $end
@@ -241,8 +241,10 @@ $upscope $end
 
 
 $scope module top $end
+$var reg 32 "5 i2c_addr [31:0] $end
+$var reg 4 "6 offset [3:0] $end
 
-$scope begin unnamed$$_vcs_2 $end
+$scope begin unnamed$$_vcs_3 $end
 $upscope $end
 
 $upscope $end
@@ -335,6 +337,8 @@ bxxxxxxxxxxxxxxxx X
 bxxx000xx ]
 bxxxxxxxx Z
 bxxxxxxxx N
+b00000000000000000000000001000000 "5
+b0001 "6
 0C
 x-
 xU

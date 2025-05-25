@@ -146,7 +146,9 @@ class wb_i2c_test extends base_test;
 
 
 
-    super.build_phase(phase);
+    super.build_phase(phase);   
+
+    
   endfunction : build_phase
 
 endclass : wb_i2c_test

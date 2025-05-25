@@ -13,10 +13,11 @@ module top;
 
   
   
-  `include "mc_sequencer.sv"
-  `include "mc_seq_lib.sv"
-  `include "testbench.sv"
-  `include "test_lib.sv"
+  `include "wb_i2c_mcsequencer.sv"
+  `include "wb_i2c_sequences.sv"
+  `include "wb_i2c_mcseqs_lib.sv"
+  `include "wb_i2c_tb.sv"
+  `include "wb_i2c_test_lib.sv"
 
 
   
